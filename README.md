@@ -1,2 +1,2 @@
 # Calculator
-Basic GUI Calculator using Stacks (WIP)
+Basic GUI Calculator using Stacks 
