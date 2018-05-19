@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7a5da4c0-30fd-4729-a6c9-c40eb674bb70" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/Calculator.java" afterPath="$PROJECT_DIR$/src/Calculator.java" />
-      <change beforePath="$PROJECT_DIR$/src/GUI.java" afterPath="$PROJECT_DIR$/src/GUI.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Calculator.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Calculator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Calculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="19" column="65" lean-forward="false" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
+            <state relative-caret-position="-1856">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -30,11 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="401" column="13" lean-forward="false" selection-start-line="401" selection-start-column="13" selection-end-line="401" selection-end-column="13" />
+            <state relative-caret-position="48">
+              <caret line="416" column="28" lean-forward="true" selection-start-line="416" selection-start-column="28" selection-end-line="416" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -80,8 +79,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Calculator.java" />
         <option value="$PROJECT_DIR$/src/GUI.java" />
+        <option value="$PROJECT_DIR$/src/Calculator.java" />
       </list>
     </option>
   </component>
@@ -510,20 +509,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Calculator.java">
+    <entry file="file://$PROJECT_DIR$/src/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="19" column="65" lean-forward="false" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
+        <state relative-caret-position="48">
+          <caret line="416" column="28" lean-forward="true" selection-start-line="416" selection-start-column="28" selection-end-line="416" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI.java">
+    <entry file="file://$PROJECT_DIR$/src/Calculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="401" column="13" lean-forward="false" selection-start-line="401" selection-start-column="13" selection-end-line="401" selection-end-column="13" />
+        <state relative-caret-position="-1856">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

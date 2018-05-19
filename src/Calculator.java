@@ -17,7 +17,6 @@ public class Calculator {
     }
 
     public double doCalc(String[] input) {
-        System.out.println("postfix: " + Arrays.toString(input));
         Stack<String> stack = new Stack<String>();
         for (String s : input) {
             if (!operatorsList.contains(s)) {
@@ -62,7 +61,6 @@ public class Calculator {
             infixArr[i] = infixList.get(i);
         }
         String previousChar = "";
-        String secondPrevious = "";
         for (int i = 0; i < infixArr.length; i++) {
             String token = "" + infixArr[i];
             boolean madeItANumber = false;
@@ -80,7 +78,7 @@ public class Calculator {
                 operators.pop(); //this pops (
 
             } else if (operatorsList.contains(token)) {
-                if (token.equals("-") && (operatorsList.contains(previousChar) || operatorsList.contains(secondPrevious) || i==0)) {
+                if (token.equals("-") && ( i==0 || !Character.isDigit(previousChar.charAt(0)))) {
                     i++;
                     outputs.add("-" + infixArr[i]);
                     madeItANumber = true;
@@ -98,12 +96,10 @@ public class Calculator {
                     operators.push(token);
             }
             if (madeItANumber) {
-                secondPrevious = infixArr[i-1];
                 previousChar = infixArr[i];
             }
             else {
 
-                secondPrevious = previousChar;
                 previousChar = token;
             }
         }
