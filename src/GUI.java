@@ -41,8 +41,6 @@ public class GUI extends KeyAdapter {
         blank8.setEditable(false);
         blank9.setEditable(false);
         blank10.setEditable(false);
-
-
         JButton add = new JButton("+");
         JButton subtract = new JButton("-");
         JButton multiply = new JButton("*");
@@ -60,6 +58,7 @@ public class GUI extends KeyAdapter {
         JButton eight = new JButton("8");
         JButton nine = new JButton("9");
         JButton zero = new JButton("0");
+        JButton decimal = new JButton(".");
         JButton open = new JButton("(");
         JButton close = new JButton(")");
         JButton equals = new JButton("=");
@@ -105,7 +104,14 @@ public class GUI extends KeyAdapter {
                 mainPanel.setFocusable(true);
             }
         });
-
+        decimal.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                expression = expression+ ".";
+                output.setText(expression);
+                mainPanel.setFocusable(true);
+            }
+        });
         subtract.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -155,7 +161,7 @@ public class GUI extends KeyAdapter {
 
                     Calculator calc = new Calculator();
                     String[] postFix = calc.infixToPostFix(expression);
-                    int answer = calc.doCalc(postFix);
+                    double answer = calc.doCalc(postFix);
                     System.out.println("Postfix: " + Arrays.toString(postFix));
                     output.setText("" + answer);
                     expression = "" + answer;
@@ -295,12 +301,17 @@ public class GUI extends KeyAdapter {
                     if(expression.length()>0) {
                         Calculator calc = new Calculator();
                         String[] postFix = calc.infixToPostFix(expression);
-                        int answer = calc.doCalc(postFix);
+                        double answer = calc.doCalc(postFix);
                         System.out.println("Postfix: " + Arrays.toString(postFix));
                         output.setText("" + answer);
                         expression = "" + answer;
                         mainPanel.setFocusable(true);
                     }
+                }
+                else if(ch.equals("."))
+                {
+                    expression = expression + ".";
+                    output.setText(expression);
                 }
                 else if(ch.equals("1"))
                 {
@@ -418,10 +429,9 @@ public class GUI extends KeyAdapter {
         mainPanel.add(subtract);
         mainPanel.add(exp);
         mainPanel.add(zero);
-        mainPanel.add(blank8);
+        mainPanel.add(decimal);
         mainPanel.add(equals);
         mainPanel.add(add);
-
         mainPanel.setFocusable(true);
         frame.add(mainPanel);
         frame.setVisible(true);
