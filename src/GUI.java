@@ -398,11 +398,8 @@ public class GUI extends KeyAdapter {
                     expression = expression + " )";
                     output.setText(expression);
                 }
-
-
-
+                mainPanel.setFocusable(true);
             }
-
             @Override
             public void keyReleased(KeyEvent e) {
             }
