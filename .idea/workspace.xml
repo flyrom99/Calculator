@@ -2,32 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a5da4c0-30fd-4729-a6c9-c40eb674bb70" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Point.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/Calculator.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$1.class" afterPath="$PROJECT_DIR$/out/production/Calculator/GUI$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$10.class" afterPath="$PROJECT_DIR$/out/production/Calculator/GUI$10.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$11.class" afterPath="$PROJECT_DIR$/out/production/Calculator/GUI$11.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$12.class" afterPath="$PROJECT_DIR$/out/production/Calculator/GUI$12.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$13.class" afterPath="$PROJECT_DIR$/out/production/Calculator/GUI$13.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$14.class" afterPath="$PROJECT_DIR$/out/production/Calculator/GUI$14.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$15.class" afterPath="$PROJECT_DIR$/out/production/Calculator/GUI$15.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$16.class" afterPath="$PROJECT_DIR$/out/production/Calculator/GUI$16.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$17.class" afterPath="$PROJECT_DIR$/out/production/Calculator/GUI$17.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$18.class" afterPath="$PROJECT_DIR$/out/production/Calculator/GUI$18.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$19.class" afterPath="$PROJECT_DIR$/out/production/Calculator/GUI$19.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$2.class" afterPath="$PROJECT_DIR$/out/production/Calculator/GUI$2.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$20.class" afterPath="$PROJECT_DIR$/out/production/Calculator/GUI$20.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$21.class" afterPath="$PROJECT_DIR$/out/production/Calculator/GUI$21.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$22.class" afterPath="$PROJECT_DIR$/out/production/Calculator/GUI$22.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$3.class" afterPath="$PROJECT_DIR$/out/production/Calculator/GUI$3.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$4.class" afterPath="$PROJECT_DIR$/out/production/Calculator/GUI$4.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$5.class" afterPath="$PROJECT_DIR$/out/production/Calculator/GUI$5.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$6.class" afterPath="$PROJECT_DIR$/out/production/Calculator/GUI$6.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$7.class" afterPath="$PROJECT_DIR$/out/production/Calculator/GUI$7.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$8.class" afterPath="$PROJECT_DIR$/out/production/Calculator/GUI$8.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$9.class" afterPath="$PROJECT_DIR$/out/production/Calculator/GUI$9.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI.class" afterPath="$PROJECT_DIR$/out/production/Calculator/GUI.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$10.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$11.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$12.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$13.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$14.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$15.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$16.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$17.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$18.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$19.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$2.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$20.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$21.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$22.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$3.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$4.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$5.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$6.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$7.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$8.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI$9.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator/GUI.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/Calculator.java" afterPath="$PROJECT_DIR$/src/Calculator.java" />
       <change beforePath="$PROJECT_DIR$/src/GUI.java" afterPath="$PROJECT_DIR$/src/GUI.java" />
     </list>
@@ -47,8 +45,8 @@
       <file leaf-file-name="Calculator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Calculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1396">
-              <caret line="26" column="51" lean-forward="false" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
+            <state relative-caret-position="-894">
+              <caret line="37" column="39" lean-forward="false" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,12 +57,14 @@
       <file leaf-file-name="GUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1366">
-              <caret line="433" column="21" lean-forward="true" selection-start-line="433" selection-start-column="21" selection-end-line="433" selection-end-column="21" />
+            <state relative-caret-position="13240">
+              <caret line="662" column="55" lean-forward="true" selection-start-line="662" selection-start-column="55" selection-end-line="662" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#10720#10721#0" expanded="true" />
-                <element signature="e#10769#10770#0" expanded="true" />
+                <element signature="e#447#1496#0" expanded="true" />
+                <element signature="e#1495#1496#0" expanded="true" />
+                <element signature="e#6636#6637#0" expanded="true" />
+                <element signature="e#6685#6686#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -73,8 +73,8 @@
       <file leaf-file-name="Point.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Point.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="23" column="40" lean-forward="false" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+            <state relative-caret-position="480">
+              <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
               <folding>
                 <element signature="e#249#250#0" expanded="true" />
                 <element signature="e#278#279#0" expanded="true" />
@@ -98,10 +98,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>+ &quot; &quot;;</find>
-      <find>outputs = outputs + token</find>
-      <find>outputs = outputs + popped</find>
-      <find>parenAreCorrect</find>
       <find>Math</find>
       <find>desOnlyPanel</find>
       <find>exparr</find>
@@ -115,6 +111,23 @@
       <find>int</find>
       <find>doVari</find>
       <find>key</find>
+      <find>layout</find>
+      <find>toggleGraphing</find>
+      <find>toggle</find>
+      <find>enable</find>
+      <find>graphing</find>
+      <find>Calculator</find>
+      <find>graphingMode.ad</find>
+      <find>forxv</find>
+      <find>System.out.println(</find>
+      <find>System.out.println</find>
+      <find>forX</find>
+      <find>infixToPost</find>
+      <find>insert</find>
+      <find>components.add</find>
+      <find>components</find>
+      <find>keyCode</find>
+      <find>doVariable</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -135,8 +148,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="16" />
-    <option name="y" value="-10" />
+    <option name="x" value="412" />
+    <option name="y" value="-22" />
     <option name="width" value="1280" />
     <option name="height" value="752" />
   </component>
@@ -449,6 +462,14 @@
       <option name="presentableId" value="Default" />
       <updated>1511893316398</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added functionality for calculating f(x) in Calculator clas">
+      <created>1535814920773</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1535814920773</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -469,6 +490,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1701427" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287879" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -482,15 +504,18 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287879" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added functionality for calculating f(x) in Calculator clas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added functionality for calculating f(x) in Calculator clas" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -515,8 +540,10 @@
           <caret line="416" column="28" lean-forward="false" selection-start-line="416" selection-start-column="28" selection-end-line="416" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#10720#10721#0" expanded="true" />
-            <element signature="e#10769#10770#0" expanded="true" />
+            <element signature="e#447#1496#0" expanded="true" />
+            <element signature="e#1495#1496#0" expanded="true" />
+            <element signature="e#6636#6637#0" expanded="true" />
+            <element signature="e#6685#6686#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -537,8 +564,10 @@
           <caret line="416" column="28" lean-forward="true" selection-start-line="416" selection-start-column="28" selection-end-line="416" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#10720#10721#0" expanded="true" />
-            <element signature="e#10769#10770#0" expanded="true" />
+            <element signature="e#447#1496#0" expanded="true" />
+            <element signature="e#1495#1496#0" expanded="true" />
+            <element signature="e#6636#6637#0" expanded="true" />
+            <element signature="e#6685#6686#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -559,8 +588,10 @@
           <caret line="389" column="0" lean-forward="true" selection-start-line="389" selection-start-column="0" selection-end-line="389" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#10720#10721#0" expanded="true" />
-            <element signature="e#10769#10770#0" expanded="true" />
+            <element signature="e#447#1496#0" expanded="true" />
+            <element signature="e#1495#1496#0" expanded="true" />
+            <element signature="e#6636#6637#0" expanded="true" />
+            <element signature="e#6685#6686#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -581,8 +612,10 @@
           <caret line="403" column="25" lean-forward="false" selection-start-line="403" selection-start-column="25" selection-end-line="403" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#10720#10721#0" expanded="true" />
-            <element signature="e#10769#10770#0" expanded="true" />
+            <element signature="e#447#1496#0" expanded="true" />
+            <element signature="e#1495#1496#0" expanded="true" />
+            <element signature="e#6636#6637#0" expanded="true" />
+            <element signature="e#6685#6686#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -603,16 +636,18 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#10720#10721#0" expanded="true" />
-            <element signature="e#10769#10770#0" expanded="true" />
+            <element signature="e#447#1496#0" expanded="true" />
+            <element signature="e#1495#1496#0" expanded="true" />
+            <element signature="e#6636#6637#0" expanded="true" />
+            <element signature="e#6685#6686#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Point.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="23" column="40" lean-forward="false" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+        <state relative-caret-position="480">
+          <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
           <folding>
             <element signature="e#249#250#0" expanded="true" />
             <element signature="e#278#279#0" expanded="true" />
@@ -626,8 +661,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Calculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1396">
-          <caret line="26" column="51" lean-forward="false" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
+        <state relative-caret-position="-894">
+          <caret line="37" column="39" lean-forward="false" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -636,12 +671,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1366">
-          <caret line="433" column="21" lean-forward="true" selection-start-line="433" selection-start-column="21" selection-end-line="433" selection-end-column="21" />
+        <state relative-caret-position="13240">
+          <caret line="662" column="55" lean-forward="true" selection-start-line="662" selection-start-column="55" selection-end-line="662" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#10720#10721#0" expanded="true" />
-            <element signature="e#10769#10770#0" expanded="true" />
+            <element signature="e#447#1496#0" expanded="true" />
+            <element signature="e#1495#1496#0" expanded="true" />
+            <element signature="e#6636#6637#0" expanded="true" />
+            <element signature="e#6685#6686#0" expanded="true" />
           </folding>
         </state>
       </provider>

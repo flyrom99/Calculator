@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Arrays;
 
@@ -9,12 +10,39 @@ import java.util.Arrays;
  */
 public class GUI extends KeyAdapter {
     private JPanel mainPanel = new JPanel(new GridLayout(6,5));
+    private boolean inGraphingMode = false;
+    private Point[] points;
+    private Calculator calc = new Calculator();
+    private JPanel graphingPanel = new JPanel(){
+        @Override
+        public void paintComponent(Graphics g)
+        {
+            Graphics2D g2 = (Graphics2D)g;
+            g.setColor(Color.white);
+            g2.fillRect(0,0,graphingPanel.getWidth(),graphingPanel.getHeight());
+            g.setColor(Color.black);
+            g2.setRenderingHint(
+                    RenderingHints.KEY_ANTIALIASING,
+                    RenderingHints.VALUE_ANTIALIAS_ON);
+            g2.setColor(Color.BLACK);
+            g2.drawLine(0,graphingPanel.getHeight()/2,graphingPanel.getWidth(),graphingPanel.getHeight()/2);
+            g2.drawLine(graphingPanel.getWidth()/2,0,graphingPanel.getWidth()/2,graphingPanel.getHeight());
+            if(points!=null) {
+                for (int i = 0; i < points.length - 1; i++) {
+                    Point p1 = pointToPixelCoord(points[i]);
+                    Point p2 = pointToPixelCoord(points[i+1]);
+                    g2.drawLine((int) p1.getX(), (int) p1.getY(), (int) p2.getX(), (int) p2.getY());
+                }
+            }
+        }
+    };
     private JFrame frame = new JFrame("Calculator");
     JTextArea output = new JTextArea();
     public static String expression = "";
     boolean variablesEnabled = false;
-    int xScale;
-    int yScale;
+    ArrayList<JComponent> components = new ArrayList<>();
+    int xScale = 25; //how many pixels per 1.0 on the x axis
+    int yScale = 25; //how many pixels per 1.0 on the y axis
     public static void main(String[] args)
     {
         Scanner key = new Scanner(System.in);
@@ -27,6 +55,13 @@ public class GUI extends KeyAdapter {
             variablesEnabled = false;
         else
             variablesEnabled = true;
+    }
+    public void disableFocusable(ArrayList<JComponent> components)
+    {
+        for(JComponent comp: components)
+        {
+            comp.setFocusable(false);
+        }
     }
     public GUI()
     {
@@ -75,41 +110,80 @@ public class GUI extends KeyAdapter {
         JMenuBar bar = new JMenuBar();
         JMenu fileMenu = new JMenu("File");
         JMenuItem graphingMode = new JMenuItem("toggle graphing mode");
+        JMenuItem toggleVariables = new JMenuItem("Toggle variables");
         fileMenu.add(graphingMode);
+        fileMenu.add(toggleVariables);
         bar.add(fileMenu);
         mod.setFocusable(false);
+        components.add(mod);
         add.setFocusable(false);
+        components.add(add);
         subtract.setFocusable(false);
+        components.add(subtract);
         multiply.setFocusable(false);
+        components.add(multiply);
         divide.setFocusable(false);
+        components.add(divide);
         exp.setFocusable(false);
+        components.add(exp);
         CE.setFocusable(false);
+        components.add(CE);
         one.setFocusable(false);
+        components.add(one);
         two.setFocusable(false);
+        components.add(two);
         three.setFocusable(false);
+        components.add(three);
         four.setFocusable(false);
+        components.add(four);
         five.setFocusable(false);
+        components.add(five);
         six.setFocusable(false);
+        components.add(six);
         seven.setFocusable(false);
+        components.add(seven);
         eight.setFocusable(false);
+        components.add(eight);
         nine.setFocusable(false);
+        components.add(nine);
         zero.setFocusable(false);
+        components.add(zero);
         open.setFocusable(false);
+        components.add(open);
         close.setFocusable(false);
+        components.add(close);
         equals.setFocusable(false);
+        components.add(equals);
         blank1.setFocusable(false);
+        components.add(blank1);
         blank2.setFocusable(false);
+        components.add(blank1);
         blank3.setFocusable(false);
+        components.add(blank2);
+        components.add(blank3);
         blank4.setFocusable(false);
+        components.add(blank4);
         blank5.setFocusable(false);
+        components.add(blank5);
         blank6.setFocusable(false);
+        components.add(blank6);
         blank7.setFocusable(false);
+        components.add(blank7);
         blank8.setFocusable(false);
+        components.add(blank8);
         blank9.setFocusable(false);
+        components.add(blank9);
         blank10.setFocusable(false);
+        components.add(blank10);
         output.setText(expression);
         output.setEditable(false);
         output.setLineWrap(true);
+        toggleVariables.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                toggleVariables();
+            }
+        });
         add.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -171,16 +245,20 @@ public class GUI extends KeyAdapter {
             public void actionPerformed(ActionEvent e) {
                 if(expression.length()>0)
                 {
-                    System.out.println("Calculating for: " + expression);
-
-                    Calculator calc = new Calculator();
-                    System.out.println("infix: " + expression);
-                    String[] postFix = calc.infixToPostFix(expression);
-                    double answer = calc.doCalc(postFix);
-                    System.out.println("Postfix: " + Arrays.toString(postFix));
-                    output.setText("" + answer);
-                    expression = "" + answer;
-                    mainPanel.setFocusable(true);
+                    if(variablesEnabled)
+                    {
+                        togglePanel(graphingPanel, mainPanel);
+                        inGraphingMode = true;
+                        variablesEnabled = true;
+                    }
+                    else {
+                        expression = calc.insertMultiplication(expression);
+                        String[] postFix = calc.infixToPostFix(expression);
+                        double answer = calc.doCalc(postFix);
+                        output.setText("" + answer);
+                        expression = "" + answer;
+                        mainPanel.setFocusable(true);
+                    }
                 }
             }
         });
@@ -292,7 +370,64 @@ public class GUI extends KeyAdapter {
         graphingMode.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                toggleVariables();
+                if(!inGraphingMode) {
+                    togglePanel(graphingPanel, mainPanel);
+                    inGraphingMode = true;
+                    variablesEnabled = true;
+                }
+                else
+                {
+                    togglePanel(mainPanel,graphingPanel);
+                    inGraphingMode = false;
+                }
+
+            }
+        });
+        graphingPanel.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if(e.getKeyCode() == 71)
+                {
+                    if(!inGraphingMode) {
+                        if(expression.length()>0) {
+                            togglePanel(graphingPanel, mainPanel);
+                            inGraphingMode = true;
+                            variablesEnabled = true;
+                        }
+                    }
+                    else
+                    {
+                        togglePanel(mainPanel,graphingPanel);
+                        inGraphingMode = false;
+                    }
+                }
+                else if(e.getKeyCode() == 75)
+                {
+                    System.out.println("went here");
+                    xScale*=2;
+                    yScale*=2;
+                    graphingPanel.removeAll();
+                    graphingPanel.repaint();
+
+                }
+                else if(e.getKeyCode() == 74)
+                {
+                    System.out.println("went here");
+                    xScale/=2;
+                    yScale/=2;
+
+                    graphingPanel.repaint();
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
             }
         });
         mainPanel.addKeyListener(new KeyListener() {
@@ -316,18 +451,55 @@ public class GUI extends KeyAdapter {
                         output.setText(expression);
                     }
                 }
+                else if(e.getKeyCode() == 86)
+                {
+                    toggleVariables();
+                }
+                else if (e.getKeyCode() == 71)
+                {
+                    if(!inGraphingMode) {
+                        togglePanel(graphingPanel, mainPanel);
+                        inGraphingMode = true;
+                        variablesEnabled = true;
+                    }
+                    else
+                    {
+                        togglePanel(mainPanel,graphingPanel);
+                        inGraphingMode = false;
+                    }
+                }
                 else if(e.getKeyChar() == 10)
                 {
                     if(expression.length()>0) {
-                        Calculator calc = new Calculator();
-                        System.out.println("infix: " + expression);
-                        String[] postFix = calc.infixToPostFix(expression);
-                        double answer = calc.doCalc(postFix);
-                        System.out.println("Postfix: " + Arrays.toString(postFix));
-                        output.setText("" + answer);
-                        expression = "" + answer;
-                        mainPanel.setFocusable(true);
+                        if(variablesEnabled)
+                        {
+                            togglePanel(graphingPanel, mainPanel);
+                            inGraphingMode = true;
+                            variablesEnabled = true;
+                        }
+                        else {
+                            expression = calc.insertMultiplication(expression);
+                            String[] postFix = calc.infixToPostFix(expression);
+                            double answer = calc.doCalc(postFix);
+                            output.setText("" + answer);
+                            expression = "" + answer;
+                            mainPanel.setFocusable(true);
+                        }
                     }
+                }
+                else if(e.getKeyCode() == 187)
+                {
+                    System.out.println("went here");
+                    xScale*=2;
+                    yScale*=2;
+                    graphingPanel.repaint();
+                }
+                else if(e.getKeyCode() == 189)
+                {
+                    System.out.println("went here");
+                    xScale/=2;
+                    yScale/=2;
+                    graphingPanel.repaint();
                 }
                 else if(ch.equals("."))
                 {
@@ -424,7 +596,15 @@ public class GUI extends KeyAdapter {
                     if(variablesEnabled)
                     {
                         if(Character.isAlphabetic(ch.charAt(0))) {
-                            expression = expression += ch;
+                            expression+= ch;
+                            output.setText(expression);
+                        }
+                    }
+                    else
+                    {
+                        if(ch.equals("e"))
+                        {
+                            expression+="e";
                             output.setText(expression);
                         }
                     }
@@ -466,10 +646,29 @@ public class GUI extends KeyAdapter {
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-    public void plot(JFrame frame, Point[] points)
+    public void togglePanel(JPanel newPanel,JPanel currentPanel)
     {
-
+        frame.remove(currentPanel);
+        frame.add(newPanel);
+        frame.revalidate();
+        expression = calc.insertMultiplication(expression);
+        if(variablesEnabled && expression.length()>0)
+            points =calc.calcForXValues(((graphingPanel.getWidth())*-1)/xScale,(graphingPanel.getWidth())/xScale,calc.infixToPostFix(expression),.01);
+        frame.repaint();
+        newPanel.requestFocusInWindow();
+        disableFocusable(components);
     }
+    public Point pointToPixelCoord(Point p)
+    {
+       Point center = new Point(graphingPanel.getWidth()/2,graphingPanel.getHeight()/2);
+       center.x+=(p.getX()*xScale);
+       if(p.getY()<0)
+           center.y+=(Math.abs(p.getY()*yScale));
+       else
+           center.y-=(Math.abs(p.getY()*yScale));
+       return center;
+    }
+
 
 
 }
