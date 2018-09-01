@@ -12,11 +12,21 @@ public class GUI extends KeyAdapter {
     private JFrame frame = new JFrame("Calculator");
     JTextArea output = new JTextArea();
     public static String expression = "";
+    boolean variablesEnabled = false;
+    int xScale;
+    int yScale;
     public static void main(String[] args)
     {
         Scanner key = new Scanner(System.in);
         GUI gui = new GUI();
 
+    }
+    public void toggleVariables()
+    {
+        if(variablesEnabled)
+            variablesEnabled = false;
+        else
+            variablesEnabled = true;
     }
     public GUI()
     {
@@ -62,7 +72,11 @@ public class GUI extends KeyAdapter {
         JButton open = new JButton("(");
         JButton close = new JButton(")");
         JButton equals = new JButton("=");
-
+        JMenuBar bar = new JMenuBar();
+        JMenu fileMenu = new JMenu("File");
+        JMenuItem graphingMode = new JMenuItem("toggle graphing mode");
+        fileMenu.add(graphingMode);
+        bar.add(fileMenu);
         mod.setFocusable(false);
         add.setFocusable(false);
         subtract.setFocusable(false);
@@ -160,6 +174,7 @@ public class GUI extends KeyAdapter {
                     System.out.println("Calculating for: " + expression);
 
                     Calculator calc = new Calculator();
+                    System.out.println("infix: " + expression);
                     String[] postFix = calc.infixToPostFix(expression);
                     double answer = calc.doCalc(postFix);
                     System.out.println("Postfix: " + Arrays.toString(postFix));
@@ -274,7 +289,12 @@ public class GUI extends KeyAdapter {
                 mainPanel.setFocusable(true);
             }
         });
-
+        graphingMode.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                toggleVariables();
+            }
+        });
         mainPanel.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
@@ -300,6 +320,7 @@ public class GUI extends KeyAdapter {
                 {
                     if(expression.length()>0) {
                         Calculator calc = new Calculator();
+                        System.out.println("infix: " + expression);
                         String[] postFix = calc.infixToPostFix(expression);
                         double answer = calc.doCalc(postFix);
                         System.out.println("Postfix: " + Arrays.toString(postFix));
@@ -398,6 +419,16 @@ public class GUI extends KeyAdapter {
                     expression = expression + " )";
                     output.setText(expression);
                 }
+                else
+                {
+                    if(variablesEnabled)
+                    {
+                        if(Character.isAlphabetic(ch.charAt(0))) {
+                            expression = expression += ch;
+                            output.setText(expression);
+                        }
+                    }
+                }
                 mainPanel.setFocusable(true);
             }
             @Override
@@ -431,13 +462,14 @@ public class GUI extends KeyAdapter {
         mainPanel.add(add);
         mainPanel.setFocusable(true);
         frame.add(mainPanel);
+        frame.setJMenuBar(bar);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-
+    }
+    public void plot(JFrame frame, Point[] points)
+    {
 
     }
-
 
 
 }

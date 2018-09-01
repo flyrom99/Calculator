@@ -13,11 +13,18 @@ public class Calculator {
     public final int[] priorities = {2, 2, 3, 2, 1, 1, 0, 0, 0};
 
     public static void main(String[] args) {
-
+        Calculator c = new Calculator();
+        String[] input = {"3","x","+"};
+        String infix = "( 3 + 4 ) * x";
+        System.out.println(Arrays.toString(c.calcForXValues(0,10,c.infixToPostFix(infix),1)));
     }
 
     public double doCalc(String[] input) {
+        /**
+         * @param input array of separated terms of equation in postFix format e.g. ('3','4','+')
+         */
         Stack<String> stack = new Stack<String>();
+        System.out.println(Arrays.toString(input));
         for (String s : input) {
             if (!operatorsList.contains(s)) {
                 stack.push(s);
@@ -44,6 +51,22 @@ public class Calculator {
             }
         }
         return Double.parseDouble(stack.peek());
+    }
+    public double doVariableCalc(String[] input, double x)
+    {
+        /**
+         * @param input array of separated terms of equation in postFix format e.g. ('3','4','+')
+         * @param x double that represents the single variable used throughout the equation
+         */
+        for(int i = 0;i<input.length;i++)
+        {
+            if(input[i].length() == 1 && Character.isAlphabetic(input[i].charAt(0)))
+            {
+                input[i] = "" + x;
+            }
+        }
+        System.out.println(Arrays.toString(input));
+        return doCalc(input);
     }
 
     public String[] infixToPostFix(String infix) {
@@ -153,6 +176,20 @@ public class Calculator {
 
         }
         return spacesCorrect && parenCorrect;
+    }
+    public Point[] calcForXValues(double lowerBound, double upperBound,String[] input,double increment)
+    {
+        Point[] points = new Point[(int)Math.ceil(upperBound-lowerBound)];
+        int counter = 0;
+        for(double x = lowerBound;x<upperBound;x+=increment)
+        {
+            String[] copied = Arrays.copyOf(input,input.length);
+            System.out.println("current x: " + x);
+            double result = doVariableCalc(copied,x);
+            points[counter] = new Point(x,result);
+            counter++;
+        }
+        return points;
     }
 
 
