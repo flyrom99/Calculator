@@ -10,6 +10,11 @@ public class Calculator {
     public final ArrayList<String> operatorsList = new ArrayList<>(Arrays.asList(operatorsArray));
     public final int[] priorities = {2, 2, 3, 2, 1, 1, 0, 0, 0};
 
+    /**
+     * inserts multiplication symbols into the string where implicit mutliplication is present e.g. (3+4)(7*6) = (3+4)*(7*6)
+     * @param expression infix string that has yet to be parsed
+     * @return
+     */
     public String insertMultiplication(String expression)
     {
         char currentChar = expression.charAt(0);
@@ -26,38 +31,40 @@ public class Calculator {
         }
         return expression;
     }
-    public double doCalc(String[] input) {
-        /**
-         * @param input array of separated terms of equation in postFix format e.g. ('3','4','+')
-         */
+    /**
+     * @param postfix array of separated terms of equation in postFix format e.g. ('3','4','+')
+     * parses the mathematical expression contained by the input array
+     */
+    public double doCalc(String[] postfix) {
         Stack<String> stack = new Stack<String>();
-        for (String s : input) {
+        for (String s : postfix) {
             if (!operatorsList.contains(s)) {
                 stack.push(s);
             } else {
                 String r = stack.pop();
                 String l = stack.pop();
-                double right;
-                double left;
+                double right = Double.parseDouble(r);
+                double left = Double.parseDouble(l);
                 if(l.equals("e"))
                     left = Math.E;
-                else
-                    left = Double.parseDouble(l);
                 if(r.equals("e"))
                     right = Math.E;
-                else
-                    right = Double.parseDouble(r);
                 if (s.equals("+")) {
                     stack.push("" + (left + right));
-                } else if (s.equals("-")) {
+                }
+                else if (s.equals("-")) {
                     stack.push("" + (left - right));
-                } else if (s.equals("*")) {
+                }
+                else if (s.equals("*")) {
                     stack.push("" + (left * right));
-                } else if (s.equals("/")) {
+                }
+                else if (s.equals("/")) {
                     stack.push("" + (left / right));
-                } else if (s.equals("%")) {
+                }
+                else if (s.equals("%")) {
                     stack.push("" + (left % right));
-                } else if (s.equals("^")) {
+                }
+                else if (s.equals("^")) {
                     stack.push("" + (Math.pow(left, right)));
                 }
 
@@ -85,42 +92,53 @@ public class Calculator {
         return doCalc(input);
     }
 
+    /**
+     * converts infix expression to postfix
+     * @param infix string containing a mathematical expression in infix notation
+     * @return array of strings which when concatenated together form a mathematical expression in postfix notation
+     */
     public String[] infixToPostFix(String infix) {
         Stack<String> operators = new Stack<>();
         ArrayList<String> outputs = new ArrayList<>();
         String[] infixArr = infix.split(" ");
         ArrayList<String> infixList = new ArrayList<>(Arrays.asList(infixArr));
+
         for (int i = 0; i < infixList.size(); i++) {
             String g = infixList.get(i);
             if (g.isEmpty())
                 infixList.remove(i);
         }
+
         infixArr = new String[infixList.size()];
         for (int i = 0; i < infixList.size(); i++) {
             infixArr[i] = infixList.get(i);
         }
+
         String previousChar = "";
         for (int i = 0; i < infixArr.length; i++) {
             String token = "" + infixArr[i];
             boolean madeItANumber = false;
             if (token.isEmpty())
                 continue;
-            if (!operatorsList.contains(token)) {
+            if (!operatorsList.contains(token)) { //token is a number
                 outputs.add(token);
-            } else if (token.equals("(")) {
+            }
+            else if (token.equals("(")) {
                 operators.push(token);
-            } else if (token.equals(")")) {
+            }
+            else if (token.equals(")")) {
                 while (!operators.peek().equals("(")) {
                     String popped = operators.pop();
                     outputs.add(popped);
                 }
-                operators.pop(); //this pops (
+                operators.pop(); //this pops "("
 
-            } else if (operatorsList.contains(token)) {
-                if (token.equals("-") && ( i==0 || !Character.isLetterOrDigit(previousChar.charAt(0)) )) {
+            }
+            else if (operatorsList.contains(token)) { //its an operator
+                if (token.equals("-") && ( i==0 || !Character.isLetterOrDigit(previousChar.charAt(0)))) { //this is the unary operator (not subtraction)
                     i++;
                     outputs.add("-" + infixArr[i]);
-                    madeItANumber = true;
+                    madeItANumber = true; //whether the - was applied to a number or not
                 }
                 while (!operators.isEmpty() && (priorities[operatorsList.indexOf(token)] <= priorities[operatorsList.indexOf(operators.peek())])) {
                     try {
@@ -143,7 +161,7 @@ public class Calculator {
             }
         }
 
-        while (!operators.isEmpty()) {
+        while (!operators.isEmpty()) { //adds the operators at the end of the expression, as is intended in postifx
             String popped = operators.pop();
             outputs.add(popped);
         }
