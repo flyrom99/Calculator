@@ -28,11 +28,15 @@ public class Point implements Comparable {
         Point o = (Point) k;
         double sumSquare = Math.pow(this.x, 2) + Math.pow(this.y, 2);
         double oSumSquare = Math.pow(o.x, 2) + Math.pow(o.y, 2);
-        if (this.x == o.x && this.y == o.y)
+        
+        if (this.x == o.x && this.y == o.y) {
             return 0;
-        else if (sumSquare > oSumSquare)
+        }
+        else if (sumSquare > oSumSquare) {
             return (int) sumSquare;
-        else
+        }
+        else {
             return (int) oSumSquare;
+        }
     }
 }

@@ -6,7 +6,8 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 /**
- * Created by tmoyer18 on 11/28/17.
+ * GUI for graphing calculator
+ * Hotkeys: G --> graph equation, V --> toggle variables, enter --> doCalculation
  */
 public class GUI extends KeyAdapter {
     private JPanel mainPanel = new JPanel(new GridLayout(6,5));
@@ -43,12 +44,14 @@ public class GUI extends KeyAdapter {
     ArrayList<JComponent> components = new ArrayList<>();
     int xScale = 25; //how many pixels per 1.0 on the x axis
     int yScale = 25; //how many pixels per 1.0 on the y axis
+
     public static void main(String[] args)
     {
         Scanner key = new Scanner(System.in);
         GUI gui = new GUI();
 
     }
+
     public void toggleVariables()
     {
         if(variablesEnabled)
@@ -56,6 +59,7 @@ public class GUI extends KeyAdapter {
         else
             variablesEnabled = true;
     }
+
     public void disableFocusable(ArrayList<JComponent> components)
     {
         for(JComponent comp: components)
@@ -63,6 +67,7 @@ public class GUI extends KeyAdapter {
             comp.setFocusable(false);
         }
     }
+
     public GUI()
     {
         frame.setBounds(10,10,600,400);
@@ -615,6 +620,7 @@ public class GUI extends KeyAdapter {
             public void keyReleased(KeyEvent e) {
             }
         });
+
         mainPanel.add(blank1);
         mainPanel.add(blank2);
         mainPanel.add(output);
@@ -641,6 +647,7 @@ public class GUI extends KeyAdapter {
         mainPanel.add(equals);
         mainPanel.add(add);
         mainPanel.setFocusable(true);
+
         frame.add(mainPanel);
         frame.setJMenuBar(bar);
         frame.setVisible(true);
@@ -652,8 +659,11 @@ public class GUI extends KeyAdapter {
         frame.add(newPanel);
         frame.revalidate();
         expression = calc.insertMultiplication(expression);
+
         if(variablesEnabled && expression.length()>0)
-            points =calc.calcForXValues(((graphingPanel.getWidth())*-1)/xScale,(graphingPanel.getWidth())/xScale,calc.infixToPostFix(expression),.01);
+            points =calc.calcForXValues(((graphingPanel.getWidth())*-1)/xScale,
+                    (graphingPanel.getWidth())/xScale,calc.infixToPostFix(expression),.01);
+
         frame.repaint();
         newPanel.requestFocusInWindow();
         disableFocusable(components);
